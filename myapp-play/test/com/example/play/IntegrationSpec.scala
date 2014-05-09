@@ -1,9 +1,9 @@
 package com.example.play
 
+import com.example.core.Messages
 import org.specs2.mutable._
 import org.specs2.runner._
 import org.junit.runner._
-
 import play.api.test._
 import play.api.test.Helpers._
 
@@ -20,7 +20,7 @@ class IntegrationSpec extends Specification {
 
       browser.goTo("http://localhost:" + port)
 
-      browser.pageSource must contain("Your new application is ready.")
+      browser.pageSource must contain("Your new application is ready – " + Messages.hello)
     }
   }
 }

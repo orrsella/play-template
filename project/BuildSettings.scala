@@ -13,14 +13,7 @@ object BuildSettings {
     doc in Compile        <<= target.map(_ / "none")
   )
 
-  private lazy val noPublishing = Seq(
-    publish := (),
-    publishLocal := ()
-  )
-
-  private lazy val commonSettings = basicSettings ++ Release.settings
-
-  lazy val rootSettings       = commonSettings ++ noPublishing
-  lazy val moduleSettings     = commonSettings ++ noPublishing
-  lazy val playModuleSettings = commonSettings ++ Publish.settings
+  lazy val rootSettings       = basicSettings
+  lazy val moduleSettings     = basicSettings
+  lazy val playModuleSettings = basicSettings
 }

@@ -1,0 +1,11 @@
+@(title: String, message: String, ex: Option[Throwable] = None)
+
+@main(title) {
+
+    @Html(message)
+
+    @if(ex.isDefined) {
+    <!-- @(ex.get.getMessage) -->
+    <!-- @(ex.get.getStackTrace) -->
+    }
+}

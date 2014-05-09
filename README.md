@@ -16,11 +16,11 @@ Replace every instance of `com.example` with your company/organization's domain,
 
 * `project/Build.scala` – Module configuration
 * `project/BuildSettings.scala` – Generic and plugin settings for each module
-* `project/Dependencies.scala` – Dependency configuration, come preconfigured with some convenient dependencies
+* `project/Dependencies.scala` – Dependency configuration, come pre-configured with some convenient dependencies
 
 ## Notes
 
 * The `core` module defines `HttpRuntimeException`. This implementation of `RuntimeException` adds Http status code to an exception, making it explicit which status code should be returned to the client when this exception is thrown. Make your business exceptions inherit from this base exception, so you'll have meaningful exceptions with the right status codes.
 * The `Global` object in the `play` modules allows you to intercept errors/exceptions and handle them with a custom error page. This code is commented out so you'll get the default Play error page  which is useful during development. Uncomment and create your own error page before running in production.
 * `Global` also uses the aforementioned `HttpRuntimeException` to send the correct status code.
-* Loggign is configured in the `conf/application-logger.xml` logback config file.
+* Logging is configured in the `conf/application-logger.xml` logback config file.
